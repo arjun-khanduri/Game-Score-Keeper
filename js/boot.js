@@ -6,9 +6,11 @@ var input=document.querySelector("input");
 var p1Display=document.getElementById("p1Display");
 var p2Display=document.getElementById("p2Display");
 var b1=document.getElementById("b1");
+var b2=document.getElementById("b2");
+var reset=document.getElementById("b3");
 var scoreLimit=document.getElementById("scoreLimit");
 var res=document.getElementById("result");
-// var popup=document.getElementById("exampleModalCenter");
+
 input.addEventListener("change",function(){
     winningscore=parseInt(input.value);
     scoreLimit.textContent=winningscore;
@@ -27,7 +29,6 @@ b1.addEventListener("click",function(){
     p1Display.textContent=p1score;
 });
 
-var b2=document.getElementById("b2");
 b2.addEventListener("click",function(){
     if(!gameover)
          p2score++;
@@ -39,7 +40,7 @@ b2.addEventListener("click",function(){
     }
     p2Display.textContent=p2score;
 });
-var reset=document.getElementById("b3");
+
 b3.addEventListener("click",function(){
     p1score=0;
     p2score=0;
@@ -49,6 +50,7 @@ b3.addEventListener("click",function(){
     p1Display.style.color="black";
     p2Display.style.color="black";
     scoreLimit.textContent="5";
+    scoreLimit.style.fontWeight="bold";
     input.value="";
     winningscore=5;
 })
